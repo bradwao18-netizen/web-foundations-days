@@ -92,12 +92,11 @@ console.log(searchNotes("quantum - script.js:87"));
 console.log(longestNote()); 
 // Expected output: { id: 3, text: "Email the project report to Grace", category: "work" }
 
-// Edge case: temporarily clear notes to test empty array
 let tempNotes = notes;
 notes = [];
 console.log(longestNote()); 
 // Expected output: null
-notes = tempNotes; // restore notes
+notes = tempNotes; 
 
 
 // --- 3. Testing countByCategory ---
@@ -105,21 +104,28 @@ console.log(countByCategory());
 // Expected output: { personal: 2, study: 2, work: 1 }
 
 
-// --- 4. Testing getSummary ---
+// --- 4. Testing getSummary (Plural & Singular Check) ---
 console.log(getSummary()); 
 // Expected output: "5 notes: 2 personal, 2 study, 1 work."
 
+// Test singular phrasing with exactly one note:
+let multiNotes = notes;
+notes = [{ id: 1, text: "Buy milk", category: "personal" }];
+console.log(getSummary()); 
+// Expected output: "1 note: 1 personal."
+notes = multiNotes; // restore notes array
+
 
 // --- 5. Testing isDuplicate ---
-console.log(isDuplicate("Buy milk and bread - script.js:114")); 
+console.log(isDuplicate("Buy milk and bread - script.js:120")); 
 // Expected output: true
 
-console.log(isDuplicate("Learn Python - script.js:117")); 
+console.log(isDuplicate("Learn Python - script.js:123")); 
 // Expected output: false
 
 
 // --- 6. Testing addNote ---
-console.log(addNote("Learn Python - script.js:122", "study")); 
+console.log(addNote("Learn Python - script.js:128", "study")); 
 // Expected output: true (Logs "Note added successfully.")
 
 console.log(addNote("", "study")); 
