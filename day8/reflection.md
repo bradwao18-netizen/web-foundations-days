@@ -1,0 +1,7 @@
+# Reflection: Day 8 Assignment
+
+Navigating the transition from standard web foundations to designing a large-scale, high-concurrency event ticketing system proved to be both challenging and immensely rewarding. Throughout this curriculum module, the most difficult concept for me to grasp was managing database concurrency and race conditions under heavy traffic loads—specifically understanding how to prevent double-booking without letting deadlocks degrade system performance. I overcame this challenge by breaking down transaction isolation levels, studying row-level locking mechanisms, and visualizing how temporary state holds interact with expiration timestamps. 
+
+Reviewing the feedback from my previous capstone work, I realized the importance of emphasizing robust architectural trade-offs and clearer non-functional parameters early in the design phase. Moving forward with this capstone refinement, I plan to incorporate more explicit caching strategies and fail-safe queuing patterns to handle sudden traffic spikes gracefully. 
+
+Next, I look forward to advancing my knowledge in cloud infrastructure deployment, automation pipelines, and serverless architectures to turn these architectural designs into fully deployed, scalable web systems.
